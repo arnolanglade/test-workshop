@@ -8,9 +8,6 @@
     "behat/transliterator": {
         "version": "v1.3.0"
     },
-    "composer/package-versions-deprecated": {
-        "version": "1.11.99.1"
-    },
     "doctrine/instantiator": {
         "version": "1.4.0"
     },
@@ -95,7 +92,7 @@
         ]
     },
     "psr/cache": {
-        "version": "2.0.0"
+        "version": "1.0.1"
     },
     "psr/container": {
         "version": "1.1.1"
@@ -158,7 +155,7 @@
         "version": "v5.2.6"
     },
     "symfony/cache-contracts": {
-        "version": "2.4-dev"
+        "version": "v2.2.0"
     },
     "symfony/config": {
         "version": "v5.2.4"

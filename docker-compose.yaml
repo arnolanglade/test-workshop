@@ -9,15 +9,15 @@ services:
             MYSQL_PASSWORD: 'password'
 
     php:
-        image: 'php:7.4'
+        image: 'test-workshop-php:7.4'
+        build:
+            context: '.'
+            dockerfile: './docker/Dockerfile'
         user: '${USER_ID:-1000}:${GROUP_ID:-1000}'
+        working_dir: '/app'
+        environment:
+            COMPOSER_HOME: '/app/var/composer'
         volumes:
             - '.:/app'
         depends_on:
             - 'database'
-
-    composer:
-        image: 'composer:latest'
-        user: '${USER_ID:-1000}:${GROUP_ID:-1000}'
-        volumes:
-            - '.:/app'
