@@ -15,8 +15,11 @@ start: vendor
 stop:
 	docker-compose down -v
 
-phpspec:
+unit:
 	docker-compose run --rm php vendor/bin/phpspec --config config/tests/phpspec.yaml run
 
-behat:
-	docker-compose run --rm php vendor/bin/behat
+acceptance:
+	docker-compose run --rm php vendor/bin/behat --config config/tests/behat.yaml --append-snippets -s acceptance
+
+integration:
+	docker-compose run --rm php vendor/bin/behat --config config/tests/behat.yaml --append-snippets -s integration
