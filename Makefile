@@ -15,8 +15,5 @@ start: vendor
 stop:
 	docker-compose down -v
 
-phpunit:
-	docker-compose run --rm php vendor/bin/phpunit
-
 behat:
 	docker-compose run --rm php vendor/bin/behat
