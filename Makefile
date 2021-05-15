@@ -19,7 +19,7 @@ unit:
 	docker-compose run --rm php vendor/bin/phpspec --config config/tests/phpspec.yaml run
 
 acceptance:
-	docker-compose run --rm php vendor/bin/behat --config config/tests/behat.yaml --append-snippets
+	docker-compose run --rm php vendor/bin/behat --config config/tests/behat.yaml --append-snippets -s acceptance
 
 integration:
-	docker-compose run --rm php vendor/bin/behat --config config/tests/behat.yaml --append-snippets
+	docker-compose run --rm php vendor/bin/behat --config config/tests/behat.yaml --append-snippets -s integration

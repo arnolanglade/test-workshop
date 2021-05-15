@@ -4,12 +4,12 @@ default:
             paths:
                 features: '%paths.base%/../../features'
             contexts:
-                - App\Tests\Acceptance\DemoContext
+                - App\Tests\Acceptance\CartographyContext
         integration:
             paths:
                 features: '%paths.base%/../../tests/Integration'
             contexts:
-                - App\Tests\Integration\DemoContext
+                - App\Tests\Acceptance\CartographyContext
 
     extensions:
         FriendsOfBehat\SymfonyExtension: null
