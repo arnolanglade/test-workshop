@@ -15,7 +15,7 @@ use Symfony\Component\HttpKernel\KernelInterface;
  *
  * @see http://behat.org/en/latest/quick_start.html
  */
-final class DemoContext implements Context
+final class AcceptanceContext implements Context
 {
     /** @var KernelInterface */
     private $kernel;
