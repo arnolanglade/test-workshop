@@ -1,0 +1,17 @@
+default:
+    suites:
+        acceptance:
+            paths:
+                features: '%paths.base%/../../features'
+            contexts:
+                - 'App\Tests\Acceptance\AcceptanceContext'
+        integration:
+            paths:
+                features: '%paths.base%/../../tests/Integration'
+            contexts:
+                - 'App\Tests\Integration\IntegrationContext'
+
+    extensions:
+        FriendsOfBehat\SymfonyExtension:
+            kernel:
+                class: 'App\Infrastructure\Application\Kernel'

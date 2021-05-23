@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Tests\Behat;
+namespace App\Tests\Integration;
 
 use Behat\Behat\Context\Context;
 use Symfony\Component\HttpFoundation\Request;
@@ -15,7 +15,7 @@ use Symfony\Component\HttpKernel\KernelInterface;
  *
  * @see http://behat.org/en/latest/quick_start.html
  */
-final class DemoContext implements Context
+final class IntegrationContext implements Context
 {
     /** @var KernelInterface */
     private $kernel;

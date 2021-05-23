@@ -16,8 +16,9 @@ services:
         user: '${USER_ID:-1000}:${GROUP_ID:-1000}'
         working_dir: '/app'
         environment:
-            COMPOSER_HOME: '/app/var/composer'
+            COMPOSER_HOME: '/home/composer'
         volumes:
             - '.:/app'
+            - '${COMPOSER_HOME:-~/.cache/composer}:/home/composer'
         depends_on:
             - 'database'
