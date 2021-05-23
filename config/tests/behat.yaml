@@ -4,7 +4,7 @@ default:
             paths:
                 features: '%paths.base%/../../features'
             contexts:
-                - 'App\Tests\Acceptance\AcceptanceContext'
+                - 'App\Tests\Acceptance\AccountContext'
         integration:
             paths:
                 features: '%paths.base%/../../tests/Integration'
