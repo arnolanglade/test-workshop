@@ -4,12 +4,14 @@ default:
             paths:
                 features: '%paths.base%/../../features'
             contexts:
-                - App\Tests\Acceptance\DemoContext
+                - 'App\Tests\Acceptance\DemoContext'
         integration:
             paths:
                 features: '%paths.base%/../../tests/Integration'
             contexts:
-                - App\Tests\Integration\DemoContext
+                - 'App\Tests\Integration\DemoContext'
 
     extensions:
-        FriendsOfBehat\SymfonyExtension: null
+        FriendsOfBehat\SymfonyExtension:
+            kernel:
+                class: 'App\Infrastructure\Application\Kernel'
