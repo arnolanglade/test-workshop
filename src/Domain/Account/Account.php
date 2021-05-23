@@ -12,4 +12,14 @@ class Account
         $this->username = $username;
         $this->password = $password;
     }
+
+    public function hasUsername(string $username)
+    {
+        return $this->username === $username;
+    }
+
+    public function hasSameState(Account $account)
+    {
+        return $account == $this;
+    }
 }

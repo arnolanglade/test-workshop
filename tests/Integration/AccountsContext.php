@@ -31,6 +31,10 @@ final class AccountsContext implements Context
      */
     public function theRepositoryOwnsANewAccount()
     {
-        $this->accounts->get('pepito');
+        $actualAccount = $this->accounts->get('pepito');
+
+        if (!$actualAccount->hasSameState(new Account('pepito', 'password'))) {
+            throw new \Exception('We can retrieve the account');
+        }
     }
 }
