@@ -8,16 +8,22 @@ use App\Domain\Account\Accounts;
 class InMemoryAccounts implements Accounts
 {
     /** @var array<Account> */
-    private array $accounts;
+    private array $accounts = [];
 
     public function get(string $username): Account
     {
-        return \current(
+        $account = \current(
             array_filter(
                 $this->accounts,
                 fn (Account $account) => $account->hasUsername($username)
             )
         );
+
+        if (!$account) {
+            throw new \Exception("The account $username does not exist");
+        }
+
+        return $account;
     }
 
     public function add(Account $account): void

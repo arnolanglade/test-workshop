@@ -12,6 +12,7 @@ use Behat\Behat\Context\Context;
 final class AccountsContext implements Context
 {
     private Accounts $accounts;
+    private bool $errorRaised = false;
 
     public function __construct(Accounts $accounts)
     {
@@ -35,6 +36,28 @@ final class AccountsContext implements Context
 
         if (!$actualAccount->hasSameState(new Account('pepito', 'password'))) {
             throw new \Exception('We can retrieve the account');
+        }
+    }
+
+    /**
+     * @When I get an account with an unknown username
+     */
+    public function iGetAnAccountWithAnUnknownUsername()
+    {
+        try {
+            $this->accounts->get('wrong-username');
+        } catch (\Exception $e) {
+            $this->errorRaised = true;
+        }
+    }
+
+    /**
+     * @Then an error is raised
+     */
+    public function anErrorIsRaised()
+    {
+        if (!$this->errorRaised) {
+            throw new \Exception('An error should have been raised but it did not.');
         }
     }
 }
