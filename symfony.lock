@@ -8,8 +8,23 @@
     "behat/transliterator": {
         "version": "v1.3.0"
     },
+    "doctrine/cache": {
+        "version": "1.11.2"
+    },
+    "doctrine/dbal": {
+        "version": "2.13.1"
+    },
+    "doctrine/deprecations": {
+        "version": "v0.5.3"
+    },
+    "doctrine/event-manager": {
+        "version": "1.1.1"
+    },
     "doctrine/instantiator": {
         "version": "1.4.0"
+    },
+    "doctrine/migrations": {
+        "version": "3.1.2"
     },
     "friends-of-behat/symfony-extension": {
         "version": "2.0",
@@ -203,6 +218,9 @@
     },
     "symfony/service-contracts": {
         "version": "v2.2.0"
+    },
+    "symfony/stopwatch": {
+        "version": "v5.2.7"
     },
     "symfony/string": {
         "version": "v5.2.6"
