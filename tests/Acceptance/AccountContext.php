@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Tests\Acceptance;
 
+use App\Domain\Account\Account;
 use App\Domain\Account\Accounts;
 use App\Domain\Account\UseCase\RegisterForTheApplication;
 use Behat\Behat\Context\Context;
@@ -33,6 +34,10 @@ final class AccountContext implements Context
      */
     public function pepitoHasAnAccountOnTheApplication()
     {
-        $this->accounts->get('pepito');
+        $actualAccount = $this->accounts->get('pepito');
+
+        if (!$actualAccount->hasSameState(new Account('pepito', 'password'))) {
+            throw new \Exception('We can retrieve the account');
+        }
     }
 }
